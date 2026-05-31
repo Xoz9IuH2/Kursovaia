@@ -1,0 +1,21 @@
+﻿.home{padding:0}
+.hero{background:linear-gradient(135deg,#0a16280%,#1a274450%,#0a1628100%);height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;margin:-30px-20px30px;padding:020px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipseatcenter,rgba(255,107,0,0.08)0%,transparent60%);animation:pulse4sease-in-outinfinite}
+@keyframespulse{0%,100%{transform:scale(1);opacity:0.5}50%{transform:scale(1.1);opacity:1}}
+.heroh1{font-size:64px;font-weight:800;letter-spacing:8px;text-shadow:0030pxrgba(255,107,0,0.5);margin-bottom:10px;position:relative;z-index:1}
+.herop{font-size:16px;opacity:0.8;font-weight:300;letter-spacing:1px;position:relative;z-index:1}
+.home- content{max-width:800px;margin:0auto;padding:020px40px}
+.welcome- block{text-align:center;background:#fff;border-radius:16px;padding:40px;margin-bottom:30px;box-shadow:04px20pxrgba(0,0,0,0.06)}
+.welcome- block h2{font-size:32px;font-weight:700;color:#1a1a2e;margin-bottom:15px}
+.welcome- block p{color:#555;font-size:16px;margin-bottom:8px}
+.welcome- block strong{color:#FF6B00;text-transform:uppercase;font-size:14px;letter-spacing:2px}
+.hint{color:#888!important;font-size:14px!important;margin-top:15px!important}
+.stats-3col{display:flex;gap:20px}
+.stat- card{flex:1;padding:35px20px;border-radius:16px;text-align:center;box-shadow:04px20pxrgba(0,0,0,0.1);transition:transform0.3sease}
+.stat- card:hover{transform:translateY(-5px)}
+.stat- card.blue{background:linear-gradient(135deg,#1e88e5,#1565c0);color:#fff}
+.stat- card.orange{background:linear-gradient(135deg,#ff6b00,#e65100);color:#fff}
+.stat- card.green{background:linear-gradient(135deg,#43a047,#2e7d32);color:#fff}
+.stat- card.red{background:linear-gradient(135deg,#e53935,#c62828);color:#fff}
+.stat- num{font-size:48px;font-weight:800;line-height:1;margin-bottom:10px}
+.stat- name{font-size:14px;font-weight:500;opacity:0.9;text-transform:uppercase;letter-spacing:1px}

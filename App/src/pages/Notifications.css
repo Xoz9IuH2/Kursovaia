@@ -1,0 +1,34 @@
+.notifications-page {
+    padding: 0;
+}
+
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.notification-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.notification-card.unread {
+    border-left: 4px solid #FF6B00;
+}
+
+.notification-card h3 {
+    margin-bottom: 5px;
+}
+
+.notification-card p {
+    color: #666;
+}
+
+.notification-card .date {
+    color: #999;
+    font-size: 12px;
+    margin-top: 10px;
+}

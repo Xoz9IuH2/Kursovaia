@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-header h2 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-select {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    font-size: 14px;
+    min-width: 160px;
+}
+
+.search-input {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #FF6B00;
+}
+
+.btn {
+    background: #FF6B00;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #E55A00;
+}
+
+.badge {
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.badge.pending { background: #fff3e0; color: #ff9800; }
+.badge.sent { background: #e3f2fd; color: #2196f3; }
+.badge.delivered { background: #e8f5e9; color: #4caf50; }
+.badge.arrived { background: #c8e6c9; color: #2e7d32; }
+.badge.fulfilled { background: #c8e6c9; color: #2e7d32; }
+.badge.missed { background: #ffebee; color: #f44336; }
+.badge.\'no-show\' { background: #ffebee; color: #f44336; }
+.badge.scheduled { background: #e3f2fd; color: #2196f3; }
+.badge.completed { background: #c8e6c9; color: #2e7d32; }
+.badge.cancelled { background: #ffebee; color: #f44336; }
+.badge.reviewed { background: #e3f2fd; color: #2196f3; }
+.badge.approved { background: #c8e6c9; color: #2e7d32; }
+.badge.rejected { background: #ffebee; color: #f44336; }
+.badge.commissar { background: #0D47A1; color: #fff; }
+.badge.employee { background: #FF6B00; color: #fff; }
+.badge.citizen { background: #4CAF50; color: #fff; }
+
+.edit-btn {
+    background: #e3f2fd;
+    color: #1976d2;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background: #1976d2;
+    color: #fff;
+}
+
+.delete-btn {
+    background: #ffebee;
+    color: #f44336;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #f44336;
+    color: #fff;
+}
+
+.empty {
+    text-align: center;
+    color: #999;
+    padding: 40px;
+}
+
+input, select, textarea {
+    font-family: inherit;
+}

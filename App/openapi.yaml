@@ -1,0 +1,263 @@
+openapi: 3.0.3
+info:
+  title: Voenkom API
+  version: 1.0.0
+servers:
+  - url: http://localhost:3001
+    description: Local dev
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        login:
+          type: string
+        name:
+          type: string
+        role:
+          type: string
+        email:
+          type: string
+    PersonalFile:
+      type: object
+      properties:
+        id: { type: integer }
+        user_id: { type: integer }
+        last_name: { type: string }
+        first_name: { type: string }
+        middle_name: { type: string }
+    Summon:
+      type: object
+      properties:
+        id: { type: integer }
+        personal_file_id: { type: integer }
+        summom_date: { type: string, format: date }
+        summom_time: { type: string }
+        reason: { type: string }
+        location: { type: string }
+        status: { type: string }
+    Application:
+      type: object
+      properties:
+        id: { type: integer }
+        user_id: { type: integer }
+        title: { type: string }
+        content: { type: string }
+        status: { type: string }
+    Appointment:
+      type: object
+      properties:
+        id: { type: integer }
+        user_id: { type: integer }
+        appointment_date: { type: string, format: date }
+        appointment_time: { type: string }
+        purpose: { type: string }
+        notes: { type: string }
+    Notification:
+      type: object
+      properties:
+        id: { type: integer }
+        user_id: { type: integer }
+        title: { type: string }
+        content: { type: string }
+  
+paths:
+  /api/login:
+    post:
+      summary: User login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                login:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Login successful, returns user and JWT
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    $ref: '#/components/schemas/User'
+                  token:
+                    type: string
+  /api/me:
+    get:
+      security:
+        - BearerAuth: []
+      summary: Get current user
+      responses:
+        '200':
+          description: Current user
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    $ref: '#/components/schemas/User'
+  /api/users:
+    get:
+      security:
+        - BearerAuth: []
+      summary: List users
+      responses:
+        '200':
+          description: Users array
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+    post:
+      security:
+        - BearerAuth: []
+      summary: Create user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                login:
+                  type: string
+                password:
+                  type: string
+                name:
+                  type: string
+                role:
+                  type: string
+                email:
+                  type: string
+      responses:
+        '200':
+          description: Created user id
+  /api/users/{id}:
+    delete:
+      security:
+        - BearerAuth: []
+      summary: Delete user (non-commissar)
+  /api/personal-files:
+    get:
+      security:
+        - BearerAuth: []
+      summary: List personal files
+      responses:
+        '200':
+          description: Personal files list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  { $ref: '#/components/schemas/PersonalFile' }
+    post:
+      security:
+        - BearerAuth: []
+      summary: Create personal file
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                last_name:
+                  type: string
+                first_name:
+                  type: string
+      responses:
+        '200':
+          description: Created id
+  /api/personal-files/{id}:
+    get:
+      security:
+        - BearerAuth: []
+      summary: Get personal file by id
+    put:
+      security:
+        - BearerAuth: []
+      summary: Update personal file
+  /api/summons:
+    get:
+      security:
+        - BearerAuth: []
+      summary: List summons
+    post:
+      security:
+        - BearerAuth: []
+      summary: Create summons
+  /api/summons/{id}:
+    put:
+      security:
+        - BearerAuth: []
+      summary: Update summons
+    delete:
+      security:
+        - BearerAuth: []
+      summary: Delete summons
+  /api/applications:
+    get:
+      security:
+        - BearerAuth: []
+      summary: List applications
+    post:
+      security:
+        - BearerAuth: []
+      summary: Create application
+  /api/applications/{id}:
+    put:
+      security:
+        - BearerAuth: []
+      summary: Update application
+  /api/appointments:
+    get:
+      security:
+        - BearerAuth: []
+      summary: List appointments
+    post:
+      security:
+        - BearerAuth: []
+      summary: Create appointment
+  /api/notifications:
+    get:
+      security:
+        - BearerAuth: []
+      summary: List notifications
+  /api/calendar:
+    get:
+      security:
+        - BearerAuth: []
+      summary: List calendar events
+    post:
+      security:
+        - BearerAuth: []
+      summary: Create calendar event
+  /api/statistics:
+    get:
+      security:
+        - BearerAuth: []
+      summary: Statistics
+  /api/audit:
+    get:
+      security:
+        - BearerAuth: []
+      summary: Audit log

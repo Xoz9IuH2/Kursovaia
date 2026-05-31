@@ -1,0 +1,41 @@
+.statistics-page {
+    padding: 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.stat-card .value {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.stat-card .value.pending {
+    color: #ff9800;
+}
+
+.stat-card .value.fulfilled {
+    color: #4caf50;
+}
+
+.stat-card .value.missed {
+    color: #f44336;
+}

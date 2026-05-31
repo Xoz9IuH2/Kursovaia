@@ -1,0 +1,39 @@
+.appointments-page {
+    padding: 0;
+}
+
+.appointments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.appointment-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-info h3 {
+    margin-bottom: 5px;
+}
+
+.app-info .date {
+    color: #FF6B00;
+    font-weight: 500;
+}
+
+.app-info .meta {
+    color: #666;
+    font-size: 14px;
+}
+
+.app-info .notes {
+    color: #999;
+    font-size: 14px;
+    margin-top: 5px;
+}
